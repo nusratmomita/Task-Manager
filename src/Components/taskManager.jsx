@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-//import App from './App.jsx'
+import './taskManager.css'; // Import the regular CSS file
 
 function TaskManager() {
     const [newTask, setNewTask] = useState('');
@@ -49,9 +49,8 @@ function TaskManager() {
         : 'There are tasks to complete.';
 
     return (
-        
         <div className="app">
-            <h1>React Task Manager</h1>
+            <h1 className="header">React Task Manager</h1>
 
             <input 
                 type="text" 
@@ -65,17 +64,20 @@ function TaskManager() {
             <h2>Tasks</h2>
 
             <ul>
-                {tasks.map((task, index) => (
-                    <li key={index} className="task">
-                        <span className={task.completed ? 'completed' : ''}>{task.name}</span>
-                        <span>{task.completed ? ' Done' : ' Pending'}</span>
-                        <div>
-                            <button onClick={() => toggleTaskCompletion(index)}>Complete</button>
-                            <button onClick={() => removeTask(index)}>Delete</button>
-                        </div>
-                    </li>
-                ))}
+            {tasks.map((task, index) => (
+                <li key={index} className="task">
+                    <span className={task.completed ? 'completed' : ''}>{task.name}</span>
+                    <span className={task.completed ? 'status-done' : 'status-pending'}>
+                        {task.completed ? 'Done' : 'Pending'}
+                    </span>
+                    <div>
+                        <button onClick={() => toggleTaskCompletion(index)}>Complete</button>
+                        <button onClick={() => removeTask(index)}>Delete</button>
+                    </div>
+                </li>
+            ))}
             </ul>
+
 
             {tasks.length === 0 && <p>No tasks available.</p>}
             <h3>Task Status: {taskStatus}</h3>

@@ -1,0 +1,120 @@
+/* adding some css */
+.app {
+    font-family: Arial, sans-serif;
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    color: #4caf50;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+li.task .completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+li.task span {
+    margin-right: 10px; 
+}
+
+li.task .status-pending {
+    color: #ff0000;         
+    font-weight: bold;     
+    padding: 3px 5px;      
+    border: 1px solid #ff9800; 
+    border-radius: 4px;     
+    background-color: #fff7e6; 
+}
+
+li.task .status-done {
+    color: #4caf50;        
+    font-weight: bold;
+}
+
+li.task div button {
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #333;
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #4caf50;
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 500px) {
+    .app {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    button {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
